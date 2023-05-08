@@ -1,0 +1,177 @@
+*{
+    
+   align-items: center;
+   text-align: center;
+   
+    
+}
+
+.header{
+    background-color:#CE2829;
+    width: 100%;
+}
+
+.product-title {
+    margin-right: 17.5rem; 
+    font-size: x-large;
+}
+.product-price{
+    margin-right: 20rem; 
+    font-size: xx-large;
+    font-weight: bold;
+}
+.product-score{
+    margin-right: 6rem; 
+    font-size: medium;
+    color: #5F5F5F
+}
+
+.product-comments{
+    font-size: medium;
+    color: #5F5F5F
+
+}
+
+.content-text{
+    margin-right: 18rem; 
+    display: flex;
+    text-align: center;
+    width: 40%;
+    height: 50%;
+    align-items: center;
+    margin: 0 auto;
+    font-family: 'Barlow', sans-serif;
+    
+    line-height: 2.5rem;
+    font-size: medium ;
+     
+} 
+
+content-row{
+    align-items:center;
+}
+
+.product-container{
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+    background-color: white;
+    color:black;
+    
+
+   
+   
+} 
+
+#extra-orders{
+
+   display:flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   max-width: 90%; 
+   height: 50%;
+   text-align: left;
+   align-content: left;
+   margin: 1rem 2rem;
+   
+}
+
+#container-section {
+    display:flex; 
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: medium;
+    margin: 1rem 1.5rem;
+   
+
+}
+
+#size {
+    font-weight: bold;
+    margin-bottom: 13rem;
+    margin-left: 2rem;
+}
+.form  {
+    display:flex; 
+     flex-direction: column;
+     flex-flow: column wrap;
+     
+    
+    
+}
+
+#pizza-form {
+    margin: 2rem 1rem 2rem 1rem;
+
+}
+
+
+
+#lezzetler {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    margin-left: 8rem;
+    
+    
+}
+
+
+
+.checkbox-style {
+    gap: 30px;  
+    max-width: 50%; 
+    margin-right: 3rem;
+    text-align: center;
+    max-height: 50%; 
+    display: flex; 
+    
+}
+
+
+#product-description {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    text-align: center;
+    justify-content: center;
+    
+}
+
+
+.checkbox-round {
+   
+    width: 1.3em;
+    height: 1.3em;
+    clip-path: circle(46% at 50% 50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius:black;
+    text-align: center;
+    
+  
+}
+
+.cart-price {
+    border-radius: 1rem solid black;
+    box-sizing: black;
+}
+#özel-not {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    margin-left: 25rem;
+}

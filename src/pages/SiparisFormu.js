@@ -1,17 +1,45 @@
 import React from "react"
-import "./SiparisFormu.css"
 import { Button } from "reactstrap"
+import { useState, useEffect } from "react"
+import {  Link, NavLink, activeNavLink } from "react-router-dom"
+
+import "./SiparisFormu.css"
+
 
 const SiparisFormu = () => {
+
+  const [product, setProduct] = useState({
+    isim: "",
+    boyut: "",
+    malzeme1: false,
+    malzeme2: false,
+    özel: "",
+});
+  
+  const [sayac, setSayac] = useState(0);
+  
+  
+  useEffect(() => {
+
+  }, [sayac])
+
     return (
 
     <div className="product-container">
     <form>
         <formGroup>
-                
-            <h2 className="product-title">Position Absolute Acı Pizza</h2>
+            <div className="header">
+            <Link style={{ textDecoration: 'none', color: 'white', fontSize: "small"}}  to="/anasayfa" > Anasayfa - </Link>
+            
+            <Link style={{ textDecoration: 'none', color: 'white', fontSize: "small"}}  to="/siparisOlustur" > Seçenekler - </Link>
+
+            <Link style={{ textDecoration: 'none', color: 'white', fontWeight: 'bold', fontSize: "small" }}  to="/siparisOlustur" > Sipariş Oluştur </Link>
+             </div>
+            
+                <h2 className="product-title">Position Absolute Acı Pizza</h2>
 
                 <div id="product-description">
+                    
                     <p className="product-price">85.50₺</p>
                     <p className="product-score">4.9</p>
                     <p className="product-comments">(200)</p>
@@ -22,7 +50,7 @@ const SiparisFormu = () => {
             </div>
         </formGroup> 
         
-            <formGroup>
+        <formGroup id="pizza-form">
         <div className="container">
           <div id="container-section">
             <div className="form">
@@ -46,7 +74,7 @@ const SiparisFormu = () => {
                    
             <label htmlFor="size"> 
                     <h4> Hamur Seç * </h4> 
-                        <select id="size" name="size">Hamur Kalınlığı
+                        <select id="size-dropdown" name="size">Hamur Kalınlığı
                             <option value="hamur kalınlığı">Hamur Kalınlığı</option>
                             <option value="thin">Thin</option>
                             <option value="medium">Medium</option>
@@ -122,18 +150,41 @@ const SiparisFormu = () => {
     </formGroup>
 
   <div>
-    <label htmlFor="özel-not" className="a">Sipariş Notu </label>
-    <input id="özel-not" text="Siparişine eklemek istediğin bir not var mı?"/>
+    <label htmlFor="special-text" className="a">Sipariş Notu </label>
+    <input id="special-text" text="Siparişine eklemek istediğin bir not var mı?"/>
     
   </div>
-                    
-                    
-                   
+  <hr/>
+    <div className="wrapper">
+  <Button
+          className="btn-1"
+          color="warning"
+          size="lg"
+          onClick={() => {
+            setSayac(sayac - 1);
+          }}
+        >
+          -
+        </Button>    
+  <input type="text" className="counter" value="1"/>
+
+        <Button
+          className="btn-1"
+          color="warning"
+          size="lg"
+          onClick={() => {
+            setSayac(sayac + 1);
+          }}
+        >
+          +
+        </Button>    
+       </div>            
                    
                     
     
 
-    <div className="cart-price">
+    <div id="cart-price">
+       
         <h3>
             Sipariş Toplamı
         </h3> 
@@ -144,15 +195,17 @@ const SiparisFormu = () => {
         <h4> Toplam
             <span className="total">110.50₺</span> 
         </h4>
-        <Button color="primary">SİPARİŞ VER</Button>
+        <Button   className="order-button" color="primary">SİPARİŞ VER</Button>
 
-    </div>
-</form>
-</div>
-
+       
    
+    </div>
+  
+    
+</form>
 
-                
+
+     </div>             
 
             
         )

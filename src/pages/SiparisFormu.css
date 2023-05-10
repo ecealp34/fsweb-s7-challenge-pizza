@@ -9,6 +9,8 @@
 .header{
     background-color:#CE2829;
     width: 100%;
+    height: 50%;
+    padding-bottom: 15px;
 }
 
 .product-title {
@@ -167,11 +169,46 @@ content-row{
     border-radius: 1rem solid black;
     box-sizing: black;
 }
-#özel-not {
+#special-text {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
     align-items: center;
     margin-left: 25rem;
+}
+
+.wrapper {
+    height: 150px;
+  
+} 
+
+.counter {
+    width: 60px;
+    
+    
+}
+
+.btn-1 {
+    width: 70px;
+    height: 45px;
+    
+    
+}
+
+hr {
+    
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    
+}
+
+#cart-price {
+    border-radius: 2px solid black;
+    width: 30%;
+    margin-left: 33rem;
+    justify-content: center;
+    align-items: center;
+
 }

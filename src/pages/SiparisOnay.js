@@ -4,7 +4,7 @@ import "./SiparisOnay.css";
 const SiparisOnay = () => {
     return (
         <div>
-        <p>Tebrikler!</p>
+        <p>TEBRİKLER!</p>
         <p>SİPARİŞİNİZ ALINDI!</p>
         </div>
     )

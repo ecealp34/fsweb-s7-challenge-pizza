@@ -4,8 +4,9 @@ import "./SiparisOnay.css";
 const SiparisOnay = () => {
     return (
         <div>
-        <p>TEBRİKLER!</p>
-        <p>SİPARİŞİNİZ ALINDI!</p>
+        <p style={{fontSize: 'x-large', fontFamily: "'Barlow', sans-serif"}}>TEBRİKLER!</p>
+        <p style={{fontSize: 'x-large', fontFamily: "'Barlow', sans-serif"}}>SİPARİŞİNİZ ALINDI!</p>
+
         </div>
     )
 }

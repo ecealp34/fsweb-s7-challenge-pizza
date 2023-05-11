@@ -1,5 +1,5 @@
 import React from "react"
-import { Button } from "reactstrap"
+import { Button, Input } from "reactstrap"
 import { useState, useEffect } from "react"
 import {  Link, NavLink, activeNavLink } from "react-router-dom"
 
@@ -93,56 +93,56 @@ const SiparisFormu = () => {
         <formGroup>
 
              <div id="extra-orders"> 
-                <h4>Ek Malzemeler</h4>
-                    <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
+                <h4 style={{ marginRight: '14.5rem'}}>Ek Malzemeler</h4>
+                    <p style={{fontSize: 'medium', marginRight: '11rem'}}>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
                     <div id="lezzetler">
                     
                     <label className="checbox-style">
-                    <input type="checkbox" />
-                    Pepperoni
+                    <input type="checkbox" />  Pepperoni
+                     </label>
+                    
+                    
+                    <label className="checbox-style">
+                    <input type="checkbox"/>  Sosis
+                      </label>
+                   
+                    <label className="checbox-style">
+                    <input type="checkbox" />  Kanada Jambonu
+                     </label>
+                    
+                    <label className="checbox-style">
+                    <input type="checkbox" />  Tavuk Izgara
+                     </label>
+                    
+                    <label className="checbox-style">
+                    <input type="checkbox" />  Soğan
+                     </label>
+                    
+                    
+                    <label className="checbox-style">
+                    <input type="checkbox" />  Mısır
+                     </label>
+                    
+                    <label className="checbox-style">
+                    <input type="checkbox" />  Domates
                     </label>
                     
                     <label className="checbox-style">
-                    <input type="checkbox"/>
-                    Sosis
-                    </label>
-                    <label className="checbox-style">
-                    <input type="checkbox" />
-                    Kanada Jambonu
-                    </label>
-                    <label className="checbox-style">
-                    <input type="checkbox" />
-                    Tavuk Izgara
-                    </label>
-                    <label className="checbox-style">
-                    <input type="checkbox" />
-                    Soğan
+                    <input type="checkbox" />  Sucuk
                     </label>
                     
                     <label className="checbox-style">
-                    <input type="checkbox" />
-                    Mısır
+                    <input type="checkbox" /> Jalepeno
                     </label>
+                    
                     <label className="checbox-style">
-                    <input type="checkbox" />
-                    Domates
-                    </label>
+                    <input type="checkbox" /> Sarımsak
+                     </label>
+                   
                     <label className="checbox-style">
-                    <input type="checkbox" />
-                    Sucuk
+                    <input type="checkbox" /> Biber
                     </label>
-                    <label className="checbox-style">
-                    <input type="checkbox" />
-                    Jalepeno
-                    </label>
-                    <label className="checbox-style">
-                    <input type="checkbox" />
-                    Sarımsak
-                    </label>
-                    <label className="checbox-style">
-                    <input type="checkbox" />
-                    Biber
-                    </label>
+                    
                     </div>
             </div>
                 
@@ -150,12 +150,13 @@ const SiparisFormu = () => {
     </formGroup>
 
   <div>
-    <label htmlFor="special-text" className="a">Sipariş Notu </label>
-    <input id="special-text" text="Siparişine eklemek istediğin bir not var mı?"/>
+    <label style={{marginRight: '29rem'}} htmlFor="special-text" className="a">Sipariş Notu </label>
+    <Input id="special-text" value="Siparişine eklemek istediğin bir not var mı?" style={{width: '40%',
+    height: '50%', marginLeft: '27rem'}}/>
     
   </div>
   <hr/>
-    <div className="wrapper">
+    <div className="wrapper" style={{marginRight:'27rem'}}>
   <Button
           className="btn-1"
           color="warning"
@@ -169,6 +170,7 @@ const SiparisFormu = () => {
   <input type="text" className="counter" value="1"/>
 
         <Button
+    
           className="btn-1"
           color="warning"
           size="lg"
@@ -183,27 +185,28 @@ const SiparisFormu = () => {
                     
     
 
-    <div id="cart-price">
-       
-        <h3>
+    <div id="cart-price" style={{marginRight: '10rem'}}>
+        <div className="card-text">
+        <h6 style={{marginBottom: '1rem', marginTop: '2rem'}}>
             Sipariş Toplamı
-        </h3> 
+        </h6> 
 
-        <h4> Seçimler
-            <span className="price">25.00₺</span> 
-        </h4>
-        <h4> Toplam
-            <span className="total">110.50₺</span> 
-        </h4>
-        <Button   className="order-button" color="primary">SİPARİŞ VER</Button>
+        <p> Seçimler
+            <span className="price"> 25.00₺</span> 
+        </p>
+        <p style={{color: '#CE2829'}}> Toplam
+            <span className="total"> 110.50₺</span> 
+        </p>
+        <Button   className="order-button" color="warning">SİPARİŞ VER</Button>
 
+      
        
-   
+    </div>
     </div>
   
     
 </form>
-
+  
 
      </div>             
 

@@ -11,7 +11,6 @@ const App = () => {
 
   const [products, setProducts] = useState([]);
 
-  
   useEffect(() => {
     setTimeout(() => {
       axios
@@ -29,10 +28,10 @@ const App = () => {
   return (
     <div className="App-header">
       <div className="header">
-      <h2>Teknolojik Yemekler</h2>
+      <h2 style={{ fontWeight: "bold"}}>Teknolojik Yemekler</h2>
      </div>
      
-      <Main/>
+      <Main products={products}/>
     </div>
   );
 };

@@ -1,39 +1,44 @@
 import React from "react"
-import { Button, Input } from "reactstrap"
+import { Button, Input, Form, FormGroup } from "reactstrap"
 import { useState, useEffect } from "react"
-import {  Link, NavLink, activeNavLink } from "react-router-dom"
-
+import {  Link } from "react-router-dom"
 import "./SiparisFormu.css"
 
 
 const SiparisFormu = () => {
 
-  const [product, setProduct] = useState({
-    isim: "",
-    boyut: "",
-    malzeme1: false,
-    malzeme2: false,
-    özel: "",
-});
+ 
   
-  const [sayac, setSayac] = useState(0);
+  const [count, setCount] = useState(0);
   
+  const increaseCountHandler = () => {
+    setCount(function(count) {
+      return count + 1
+    })
+  }
+ 
+  const decreaseCountHandler = () => {
+    setCount(function(count) {
+      return count - 1
+    })
+  }
+ useEffect(() => {
   
-  useEffect(() => {
+   }, [count])
 
-  }, [sayac])
-
+  
+  
     return (
 
     <div className="product-container">
-    <form>
-        <formGroup>
-            <div className="header">
+    <Form>
+        <FormGroup>
+            <div className="header" >
             <Link style={{ textDecoration: 'none', color: 'white', fontSize: "small"}}  to="/anasayfa" > Anasayfa - </Link>
             
             <Link style={{ textDecoration: 'none', color: 'white', fontSize: "small"}}  to="/siparisOlustur" > Seçenekler - </Link>
 
-            <Link style={{ textDecoration: 'none', color: 'white', fontWeight: 'bold', fontSize: "small" }}  to="/siparisOlustur" > Sipariş Oluştur </Link>
+            <Link style={{ textDecoration: 'none', color: 'white', fontWeight: 'bold', fontSize: "small"}}  to="/siparisOlustur" > Sipariş Oluştur </Link>
              </div>
             
                 <h2 className="product-title">Position Absolute Acı Pizza</h2>
@@ -46,166 +51,158 @@ const SiparisFormu = () => {
                     
                 </div>
             <div class = "content-row">  
-            <p className="content-text">Pizza,domates, peynir ve genellikle  çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olark odun ateşinde  bir fırında yüksek sıcaklıkta pişirilen lezzetli bir pizza.</p>
+            <p className="content-text">Pizza,domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen lezzetli bir pizza.</p>
             </div>
-        </formGroup> 
+        </FormGroup> 
         
-        <formGroup id="pizza-form">
-        <div className="container">
+        <FormGroup id="pizza-form">
+      <div className="container">
           <div id="container-section">
             <div className="form">
-            <h4> Boyut Seç * </h4> 
+                <h4 style={{ marginLeft: '2.5rem'}}> Boyut Seç <span style={{color: '#CE2829'}}> * </span> </h4> 
              
-            <label htmlFor="pizza-form">
-                <input id="pizza-form" type="radio" value="Küçük"/>
+                <label htmlFor="pizza-form" style={{marginLeft: ''}}>
+                <input id="pizza-form" type="radio" name="buttn" value="Küçük" />
                     Küçük
-            </label>
+                </label>
 
-            <label htmlFor="pizza-form">
-                    <input id="pizza-form" type="radio" value="Orta"/>
-                        Orta
-            </label>
+                <label htmlFor="pizza-form">
+                <input id="pizza-form" type="radio" name="buttn" value="Orta" style={{ marginLeft: '-0.9rem' }}/>
+                    Orta
+                </label>
             
-            <label htmlFor="pizza-form">
-                    <input id="pizza-form" type="radio" value="Büyük"/>
-                        Büyük
-            </label>
-            </div>   
-                   
-            <label htmlFor="size"> 
-                    <h4> Hamur Seç * </h4> 
+                <label htmlFor="pizza-form">
+                <input id="pizza-form" type="radio"  name="buttn"  value="Büyük"/>
+                    Büyük
+                </label>
+      </div>   
+
+            <div className="size-content">    
+                <label htmlFor="size"> 
+                    <h4 style={{ marginTop: '4em'}}> Hamur Seç <span style={{color: '#CE2829'}}> * </span> </h4> 
                         <select id="size-dropdown" name="size">Hamur Kalınlığı
-                            <option value="hamur kalınlığı">Hamur Kalınlığı</option>
+                            <option disabled selected hidden value="hamur kalınlığı">Hamur Kalınlığı</option>
                             <option value="thin">Thin</option>
                             <option value="medium">Medium</option>
                             <option value="thick">Thick</option>
                         </select>
-                        
-            </label> 
+                 
+                </label> 
             </div>
-            
-        </div>
+      </div> 
+    </div>
           
-        </formGroup>  
+        </FormGroup>  
 
 
 
-        <formGroup>
+        <FormGroup>
 
              <div id="extra-orders"> 
-                <h4 style={{ marginRight: '14.5rem'}}>Ek Malzemeler</h4>
-                    <p style={{fontSize: 'medium', marginRight: '11rem'}}>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
+                <h4 style={{ marginRight: '14.5rem', marginBottom: '1rem', marginTop: '2rem'}}>Ek Malzemeler</h4>
+                    <p style={{fontSize: 'medium', marginRight: '11rem', marginBottom: '1.5rem'}}>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
                     <div id="lezzetler">
                     
-                    <label className="checbox-style">
-                    <input type="checkbox" />  Pepperoni
+                    <label className="checbox-style" style={{paddingRight: '4.5rem' }}>
+                    <input type="checkbox" style={{marginRight: '0.5rem' }}/>  Pepperoni
                      </label>
                     
                     
-                    <label className="checbox-style">
-                    <input type="checkbox"/>  Sosis
+                    <label className="checbox-style" style={{paddingRight: '4.5rem' }}>
+                    <input type="checkbox" style={{marginRight: '0.5rem' }}/>  Sosis
                       </label>
                    
                     <label className="checbox-style">
-                    <input type="checkbox" />  Kanada Jambonu
+                    <input type="checkbox" style={{marginRight: '0.5rem' }}/>  Kanada Jambonu
                      </label>
                     
-                    <label className="checbox-style">
-                    <input type="checkbox" />  Tavuk Izgara
+                    <label className="checbox-style" style={{paddingRight: '3.5rem' }}>
+                    <input type="checkbox" style={{marginRight: '0.5rem' }} />  Tavuk Izgara
                      </label>
                     
-                    <label className="checbox-style">
-                    <input type="checkbox" />  Soğan
+                    <label className="checbox-style" style={{paddingRight: '4rem' }}>
+                    <input type="checkbox" style={{marginRight: '0.5rem' }}/>  Soğan
                      </label>
                     
                     
-                    <label className="checbox-style">
-                    <input type="checkbox" />  Mısır
+                    <label className="checbox-style" style={{paddingRight: '7rem' }}>
+                    <input type="checkbox" style={{marginRight: '0.5rem' }}/>  Mısır
                      </label>
                     
-                    <label className="checbox-style">
-                    <input type="checkbox" />  Domates
+                    <label className="checbox-style" style={{paddingRight: '5rem' }}>
+                    <input type="checkbox" style={{marginRight: '0.5rem' }}/>  Domates
                     </label>
                     
-                    <label className="checbox-style">
-                    <input type="checkbox" />  Sucuk
+                    <label className="checbox-style" style={{paddingRight: '4.2rem' }}>
+                    <input type="checkbox" style={{marginRight: '0.5rem' }}/>  Sucuk
                     </label>
                     
-                    <label className="checbox-style">
-                    <input type="checkbox" /> Jalepeno
+                    <label className="checbox-style" style={{paddingRight: '4rem' }}>
+                    <input type="checkbox" style={{marginRight: '0.5rem' }}/> Jalepeno
                     </label>
                     
-                    <label className="checbox-style">
-                    <input type="checkbox" /> Sarımsak
+                    <label className="checbox-style" style={{paddingRight: '5rem' }}>
+                    <input type="checkbox" style={{marginRight: '0.5rem' }}/> Sarımsak
                      </label>
                    
-                    <label className="checbox-style">
-                    <input type="checkbox" /> Biber
+                    <label className="checbox-style" >
+                    <input type="checkbox" style={{marginRight: '0.5rem' }} /> Biber
                     </label>
                     
                     </div>
             </div>
                 
 
-    </formGroup>
+    </FormGroup>
 
   <div>
-    <label style={{marginRight: '29rem'}} htmlFor="special-text" className="a">Sipariş Notu </label>
+    <label style={{marginRight: '27rem', marginTop: '6rem'}} htmlFor="special-text" className="a">Sipariş Notu </label>
     <Input id="special-text" value="Siparişine eklemek istediğin bir not var mı?" style={{width: '40%',
-    height: '50%', marginLeft: '27rem'}}/>
+    height: '50%', marginLeft: '28rem', marginTop: '1rem', marginBottom: '1.5rem'}}/>
     
   </div>
-  <hr/>
-    <div className="wrapper" style={{marginRight:'27rem'}}>
-  <Button
+  <hr style={{ width: '40%', marginLeft: '28rem'}}/>
+
+  <div id="siparis" style={{marginRight:'27rem'}}>
+  
+     <Button
           className="btn-1"
           color="warning"
           size="lg"
-          onClick={() => {
-            setSayac(sayac - 1);
-          }}
-        >
-          -
-        </Button>    
-  <input type="text" className="counter" value="1"/>
-
-        <Button
-    
+          onClick={decreaseCountHandler}
+           >-</Button>  
+       <input type="text" className="counter" value="1"/>
+        
+    <Button
           className="btn-1"
           color="warning"
           size="lg"
-          onClick={() => {
-            setSayac(sayac + 1);
-          }}
-        >
-          +
-        </Button>    
-       </div>            
-                   
-                    
-    
+          onClick={increaseCountHandler}
+          > + </Button>    
+      </div>
 
-    <div id="cart-price" style={{marginRight: '10rem'}}>
-        <div className="card-text">
-        <h6 style={{marginBottom: '1rem', marginTop: '2rem'}}>
+    <div id="cart-price" style={{ marginLeft: '27em'}}>
+        <div className="card-text" >
+        <h6 style={{marginBottom: '1rem', marginTop: '1rem'}}>
             Sipariş Toplamı
         </h6> 
 
-        <p> Seçimler
-            <span className="price"> 25.00₺</span> 
+        <p style={{fontSize: 'small'}}> Seçimler
+            <span className="price"  style={{marginLeft: '11rem'}}> 25.00₺</span> 
         </p>
-        <p style={{color: '#CE2829'}}> Toplam
-            <span className="total"> 110.50₺</span> 
+        <p style={{color: '#CE2829', fontWeight: 'bold', fontSize: 'small'}}> Toplam
+            <span className="total" style={{marginLeft: '11.5rem'}}> 110.50₺</span> 
         </p>
-        <Button   className="order-button" color="warning">SİPARİŞ VER</Button>
+        <Button   id="order-button" color="warning">SİPARİŞ VER</Button>
 
       
        
-    </div>
-    </div>
-  
     
-</form>
+    </div>
+   </div> 
+
+ 
+</Form>
   
 
      </div>             

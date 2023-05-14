@@ -1,9 +1,6 @@
 import React from "react"
-import "./Anasayfa.css";
-import SiparisFormu from "./SiparisFormu";
-import { BrowserRouter as Router, Route, Link, useParams } from "react-router-dom";
 import { Button  } from "reactstrap";
-
+import "./Anasayfa.css";
 
 
 
@@ -12,13 +9,13 @@ const Anasayfa = () => {
     return (
 
         <div>
-            <h1>KOD ACIKTIRIR PİZZA DOYURUR</h1>
-            <a href="/siparisOlustur">
-                
-            <Button color="warning" style={{borderRadius: '2rem', padding: '0.5rem 3rem'}} className="button" onClick="myFunction()">ACIKTIM</Button> 
+            <h1 className="h1" style={{lineHeight: '5rem', fontSize: 'xxx-large'}}>KOD ACIKTIRIR <br/> PIZZA, DOYURUR</h1>
+            
+            <a href="/pizza">
+                <Button color="warning" style={{borderRadius: '2rem', padding: '0.5rem 3rem'}} id="order-pizza" onClick="myFunction()">ACIKTIM</Button> 
             </a> 
 
-             <img src="./assets/mvp-banner.png" />  
+            <img src="./Assets/mvp-banner.png" />  
             
         </div>
 

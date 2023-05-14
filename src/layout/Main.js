@@ -1,13 +1,12 @@
-import { useState } from "react";
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Anasayfa from "../pages/Anasayfa";
 import SiparisOnay from "../pages/SiparisOnay";
 import SiparisFormu from "../pages/SiparisFormu";
+import SiparisFormPage from "../pages/SiparisFormPage";
 
 
-
-const Main = () => {
+const Main = ({products}) => {
 
    
 
@@ -20,15 +19,16 @@ const Main = () => {
          
              <Route exact path="/" element={<Anasayfa />} />
              <Route path="/anasayfa"><Anasayfa /></Route>
-             <Route path="/siparisOlustur"><SiparisFormu /></Route>
-             <Route path="/siparisOnay"><SiparisOnay /></Route>
+             <Route path="/pizza"><SiparisFormu products={products}/></Route>
+             <Route path="/siparisOlustur"><SiparisFormPage products={products}/></Route>
+             <Route path="/siparisOnay"><SiparisOnay products={products}/></Route>
 
      
-         </Router>
+        </Router>
       </div>
 
       
-        </div>
+    </div>
     
 
 
